@@ -82,7 +82,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
        libarchive-dev${APT_ARCH_SUFFIX} \
        libaec-dev${APT_ARCH_SUFFIX} \
        libavif-dev${APT_ARCH_SUFFIX} \
-       libmuparser-dev${APT_ARCH_SUFFIX}
+       libmuparser-dev${APT_ARCH_SUFFIX} \
+       python3-jsonschema${APT_ARCH_SUFFIX}
 
 ARG RSYNC_REMOTE
 ARG WITH_CCACHE
