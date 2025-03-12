@@ -82,8 +82,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
        libarchive-dev${APT_ARCH_SUFFIX} \
        libaec-dev${APT_ARCH_SUFFIX} \
        libavif-dev${APT_ARCH_SUFFIX} \
-       libmuparser-dev${APT_ARCH_SUFFIX} \
-       python3-jsonschema${APT_ARCH_SUFFIX}
+       libmuparser-dev${APT_ARCH_SUFFIX}
 
 ARG RSYNC_REMOTE
 ARG WITH_CCACHE
@@ -553,6 +552,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         python-is-python3 \
         # pil for antialias option of gdal2tiles
         python3-pil \
+        python3-jsonschema \
     # Install JRE with --no-install-recommends, otherwise it draws default-jre, which draws systemd, which fails to install when running the arm64v8/ubuntu:24.04 image on a 64bit host
     && apt-get install -y --no-install-recommends openjdk-"$JAVA_VERSION"-jre \
     # Install Arrow C++
